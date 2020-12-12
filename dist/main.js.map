@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://todolist/./src/index.js"],"names":["console","log","y"],"mappings":"AAAAA,QAAQC,IAAI,SAEZD,QAAQC,IADA,GAERD,QAAQC,IAAIC","file":"main.js","sourcesContent":["console.log(\"Hello\");\nlet x = 2;\nconsole.log(x);\nconsole.log(y);\n"],"sourceRoot":""}
