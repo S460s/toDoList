@@ -10,6 +10,37 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
+		<div id="content">
+			<div id="projects">
+				<h2 id="sub-title">projects</h2>
+			</div>
+
+			<div id="todoSection">
+				<h2 id="sub-title">Todos</h2>
+				<div id="todos"></div>
+				<button id="addTask">Add Task</button>
+
+				<div id="todoForm">
+					<form action="">
+						<input type="text" id="titleInput" placeholder="Title" />
+
+						<input
+							type="text"
+							id="descriptionInput"
+							placeholder="Description"
+						/>
+
+						<input type="date" id="dateInput" />
+						<p>Priority</p>
+						<div id="priorities">
+							<input type="radio" name="priority" id="firstPri" />
+							<input type="radio" name="priority" id="secondPri" />
+							<input type="radio" name="priority" id="thirdPri" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 		<script src="main.js"></script>
 	</body>
 </html>

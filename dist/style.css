@@ -1,0 +1,64 @@
+:root {
+	--sub-title-size: ;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#content {
+	display: flex;
+	height: 100vh;
+	border: green 3px solid;
+}
+
+#projects {
+	flex-grow: 1;
+	max-width: 400px;
+	min-width: 200px;
+	border: blue 1px solid;
+}
+
+/* TODO STYLES */
+
+#todoSection {
+	flex-grow: 2;
+	border: red 1px solid;
+}
+
+#sub-title {
+	text-align: center;
+	font-size: 2em;
+}
+
+#addTask {
+	display: block;
+	padding: 10px;
+	margin: 20px auto;
+}
+input[type="text"],
+input[type="date"] {
+	display: block;
+	margin: auto;
+	width: 80%;
+	padding: 5px;
+	margin-top: 10px;
+}
+input[type="radio"] {
+	width: 20px;
+	height: 20px;
+}
+
+#priorities {
+	background-color: brown;
+	display: flex;
+	justify-content: space-around;
+}
+
+#todoForm {
+	border: solid 5px blueviolet;
+	margin: auto;
+	height: 15em;
+	width: 20em;
+}
