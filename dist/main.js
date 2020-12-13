@@ -1,0 +1,2 @@
+(()=>{"use strict";(function(){const t=document.getElementById("close"),e=document.getElementById("addProjectButton"),n=document.getElementById("projectForm");return{startForm:function(){t.addEventListener("click",(function(){n.style.cssText="display: none"})),e.addEventListener("click",(function(){n.style.cssText="display: flex"}))}}})().startForm()})();
+//# sourceMappingURL=main.js.map

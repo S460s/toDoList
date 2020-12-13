@@ -1,64 +1,63 @@
-:root {
-	--sub-title-size: ;
+body {
+	background-color: cornsilk;
 }
 
-* {
-	margin: 0;
-	padding: 0;
-}
-
-#content {
-	display: flex;
-	height: 100vh;
-	border: green 3px solid;
-}
-
-#projects {
-	flex-grow: 1;
-	max-width: 400px;
-	min-width: 200px;
-	border: blue 1px solid;
-}
-
-/* TODO STYLES */
-
-#todoSection {
-	flex-grow: 2;
-	border: red 1px solid;
-}
-
-#sub-title {
-	text-align: center;
-	font-size: 2em;
-}
-
-#addTask {
-	display: block;
+#addProjectButton {
 	padding: 10px;
-	margin: 20px auto;
-}
-input[type="text"],
-input[type="date"] {
-	display: block;
-	margin: auto;
-	width: 80%;
-	padding: 5px;
-	margin-top: 10px;
-}
-input[type="radio"] {
-	width: 20px;
-	height: 20px;
+	width: 200px;
 }
 
-#priorities {
-	background-color: brown;
+/* Project */
+
+#projectForm {
+	z-index: 1;
+	border: solid 2px #3d405b;
+	border-radius: 10px;
+	width: 25em;
+	height: 10em;
+	position: absolute;
+	margin-top: 30vh;
+	left: 50%;
+	transform: translate(-50%, 0);
+	background-color: #a3b18a;
 	display: flex;
-	justify-content: space-around;
+	text-align: center;
+	justify-content: center;
+	align-items: top;
 }
 
-#todoForm {
-	border: solid 5px blueviolet;
-	margin: auto;
-	height: 15em;
-	width: 20em;
+#projectInput {
+	padding: 10px 15px;
+	border-radius: 10px;
+	font-size: 15px;
+	margin-top: 20px;
+}
+#prname {
+	font-size: 25px;
+	display: block;
+}
+
+#close {
+	color: grey;
+	position: absolute;
+	right: 5px;
+	top: 0px;
+	font-size: x-large;
+}
+
+#close:hover,
+#close:focus {
+	color: #3d405b;
+	text-decoration: none;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+#createNewProject {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+	bottom: 10px;
+	padding: 5px 10px;
+	width: 70%;
 }

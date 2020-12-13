@@ -2,43 +2,28 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0"
-		/>
-		<title>Document</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
+		<title>Document</title>
 	</head>
 	<body>
 		<div id="content">
-			<div id="projects">
-				<h2 id="sub-title">projects</h2>
+			<button id="addProjectButton">Add new project</button>
+
+			<div id="projectList">
+
 			</div>
 
-			<div id="todoSection">
-				<h2 id="sub-title">Todos</h2>
-				<div id="todos"></div>
-				<button id="addTask">Add Task</button>
 
-				<div id="todoForm">
-					<form action="">
-						<input type="text" id="titleInput" placeholder="Title" />
-
-						<input
-							type="text"
-							id="descriptionInput"
-							placeholder="Description"
-						/>
-
-						<input type="date" id="dateInput" />
-						<p>Priority</p>
-						<div id="priorities">
-							<input type="radio" name="priority" id="firstPri" />
-							<input type="radio" name="priority" id="secondPri" />
-							<input type="radio" name="priority" id="thirdPri" />
-						</div>
-					</form>
-				</div>
+			<div id="projectForm">
+				<form action="">
+					<label for="projectInput"></label>
+						<span id="prname">Project Name</span>
+						<input type="text" id="projectInput" placeholder="Amazing Project" required/>
+					</label>
+					<button id="createNewProject">Create New Project</button>
+				</form>
+				<span id="close">&times</span>
 			</div>
 		</div>
 		<script src="main.js"></script>
