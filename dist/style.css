@@ -9,7 +9,7 @@ body {
 
 /* Project */
 
-#projectForm {
+#projectPopUp {
 	z-index: 1;
 	border: solid 2px #3d405b;
 	border-radius: 10px;
