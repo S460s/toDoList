@@ -1,3 +1,3 @@
 import { projectFlow } from "./projectLogic";
 
-projectFlow.startProject();
+projectFlow.startFlow();

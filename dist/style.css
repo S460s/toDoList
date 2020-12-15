@@ -79,13 +79,11 @@ body {
 }
 
 #projectDltBtn {
-	display: inline-block;
 	float: right;
 	margin-right: 40px;
 }
 
 #projectDetails {
-	display: inline-block;
 	float: right;
 	padding-right: 10px;
 }
