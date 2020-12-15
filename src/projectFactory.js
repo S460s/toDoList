@@ -7,7 +7,9 @@ const projectFactory = function (titleText) {
 	const title = elementFactory("p", projectCard.name, "projectName", "", titleText);
 	const details = elementFactory("p", projectCard.name, "projectDetails", "", "i");
 	const delBtn = elementFactory("p", projectCard.name, "projectDltBtn", "", "x");
-	const button = delBtn.name;
+
+	const deleteBtn = delBtn.name;
+	const detailsBtn = details.name;
 
 	const displayProject = function () {
 		projectCard.displayElement();
@@ -16,7 +18,7 @@ const projectFactory = function (titleText) {
 		delBtn.displayElement();
 	};
 
-	return { displayProject, button };
+	return { displayProject, deleteBtn, detailsBtn };
 };
 
 export { projectFactory };

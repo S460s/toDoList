@@ -81,9 +81,18 @@ body {
 #projectDltBtn {
 	float: right;
 	margin-right: 40px;
+	cursor: pointer;
 }
 
 #projectDetails {
 	float: right;
 	padding-right: 10px;
+}
+
+/* TODOs */
+
+#todoSection {
+	display: block;
+	height: 20px;
+	border: 2px red solid;
 }

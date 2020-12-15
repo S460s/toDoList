@@ -20,16 +20,16 @@ const projectFlow = (function () {
 		}
 	};
 
-	const deleteProject = function (prjct) {
-		console.log(prjct.button);
-		prjct.button.addEventListener("click", () => {
-			console.log("hello");
-			let num = projectList.indexOf(prjct);
-			console.log(num);
-			projectList.splice(num, 1);
-			clearProjectDiv();
-			renderProjects();
-			console.log(projectList);
+	const handleDeleteProject = function (project) {
+		let num = projectList.indexOf(project);
+		projectList.splice(num, 1);
+		clearProjectDiv();
+		renderProjects();
+	};
+
+	const deleteProject = function (project) {
+		project.deleteBtn.addEventListener("click", () => {
+			handleDeleteProject(project);
 		});
 	};
 
