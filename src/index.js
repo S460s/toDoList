@@ -1,7 +1,35 @@
 import { elementFactory } from "./elementFactory";
-import { projectForm } from "./projectForm";
+import { projectFormLogic } from "./projectForm";
 import { projectFactory } from "./projects";
 
-projectForm.startForm();
-const task1 = projectFactory("");
-task1.renderOnClick();
+const projectFlow = (function () {
+	const projectForm = document.getElementById("projectForm");
+	const titleInput = document.getElementById("titleInput");
+	const projectList = [];
+
+	const renderProjects = function () {
+		projectList.forEach((prct) => {
+			prct.displayProject();
+		});
+	};
+
+	const handleSubmission = function (e) {
+		e.preventDefault();
+		projectList.push(projectFactory(titleInput.value));
+		titleInput.value = "";
+		renderProjects();
+	};
+
+	const createProjects = function () {
+		projectForm.addEventListener("submit", handleSubmission);
+	};
+
+	const startProject = function () {
+		projectFormLogic.startForm();
+		createProjects();
+	};
+
+	return { startProject };
+})();
+
+projectFlow.startProject();

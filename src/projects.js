@@ -1,31 +1,17 @@
 import { elementFactory } from "./elementFactory.js";
 
-const projectFactory = function () {
-	const projectForm = document.getElementById("projectForm");
+const projectFactory = function (titleText) {
 	const projects = document.getElementById("projectList");
-	const projectInput = document.getElementById("projectInput");
 
 	const projectCard = elementFactory("div", projects, "project");
-	const title = elementFactory(
-		"p",
-		projectCard.name,
-		"projectName",
-		"",
-		projectInput.value
-	);
+	const title = elementFactory("p", projectCard.name, "projectName", "", titleText);
 
-	const displayProject = function (e) {
-		e.preventDefault();
-		console.log("test");
+	const displayProject = function () {
 		projectCard.displayElement();
 		title.displayElement();
 	};
 
-	const renderOnClick = function () {
-		projectForm.addEventListener("submit", displayProject);
-	};
-
-	return { renderOnClick };
+	return { displayProject };
 };
 
 export { projectFactory };

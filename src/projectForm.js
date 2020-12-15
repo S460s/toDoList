@@ -1,4 +1,4 @@
-const projectForm = (function () {
+const projectFormLogic = (function () {
 	const closeBtn = document.getElementById("close");
 	const newProjectBtn = document.getElementById("addProjectButton");
 	const form = document.getElementById("projectPopUp");
@@ -23,4 +23,4 @@ const projectForm = (function () {
 	return { startForm };
 })();
 
-export { projectForm };
+export { projectFormLogic };
