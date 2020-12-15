@@ -7,20 +7,22 @@ body {
 	width: 200px;
 }
 
-/* Project */
+/* Project Form*/
 
 #projectPopUp {
 	z-index: 1;
 	border: solid 2px #3d405b;
 	border-radius: 10px;
+
 	width: 25em;
 	height: 10em;
 	position: absolute;
-	margin-top: 30vh;
 	left: 50%;
+	margin-top: 30vh;
 	transform: translate(-50%, 0);
 	background-color: #a3b18a;
-	display: flex;
+
+	display: none;
 	text-align: center;
 	justify-content: center;
 	align-items: top;
@@ -60,4 +62,21 @@ body {
 	bottom: 10px;
 	padding: 5px 10px;
 	width: 70%;
+}
+
+/* Projects */
+
+#projectName {
+	padding-left: 5px;
+	display: inline-block;
+}
+
+#project {
+	border: rgb(0, 99, 61) 4px solid;
+	margin-top: 10px;
+}
+
+#projectDetails {
+	float: right;
+	padding-right: 10px;
 }
