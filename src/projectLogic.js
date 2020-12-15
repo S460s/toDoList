@@ -3,7 +3,7 @@ import { projectFormLogic } from "./projectForm";
 import { projectFactory } from "./projectFactory";
 
 const projectFlow = (function () {
-	const projectDiv = document.getElementById("projectList");
+	const projectsDiv = document.getElementById("projectList");
 	const projectForm = document.getElementById("projectForm");
 	const titleInput = document.getElementById("titleInput");
 	const projectList = [];
@@ -14,6 +14,12 @@ const projectFlow = (function () {
 		});
 	};
 
+	const clearProjectDiv = function () {
+		while (projectsDiv.childNodes.length !== 0) {
+			projectsDiv.removeChild(projectsDiv.lastChild);
+		}
+	};
+
 	const deleteProject = function (prjct) {
 		console.log(prjct.button);
 		prjct.button.addEventListener("click", () => {
@@ -21,7 +27,7 @@ const projectFlow = (function () {
 			let num = projectList.indexOf(prjct);
 			console.log(num);
 			projectList.splice(num, 1);
-			projectDiv.innerHTML = "";
+			clearProjectDiv();
 			renderProjects();
 			console.log(projectList);
 		});
