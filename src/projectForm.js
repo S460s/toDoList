@@ -1,5 +1,5 @@
 const projectFormLogic = (function () {
-	const closeBtn = document.getElementById("close");
+	const closeBtn = document.getElementById("closeProjectForm");
 	const newProjectBtn = document.getElementById("addProjectButton");
 	const form = document.getElementById("projectPopUp");
 

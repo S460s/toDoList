@@ -2,6 +2,8 @@ import { projectFlow } from "./projectLogic";
 import { projectFormLogic } from "./projectForm";
 import { projectFactory } from "./projectFactory";
 
+import { todoFormLogic } from "./todoForm";
+
 const appFlow = (function () {
 	const projectForm = document.getElementById("projectForm");
 	const titleInput = document.getElementById("titleInput");
@@ -12,10 +14,9 @@ const appFlow = (function () {
 		let newProject = projectFactory(titleInput.value);
 		projectList.push(newProject);
 		titleInput.value = "";
-		projectFlow.renderProjects(projectList);
-		projectFlow.deleteProjectEvent(projectList, newProject);
-		projectFlow.showTodosEvent(newProject);
+		projectFlow.projectFunctionalities(projectList, newProject);
 		console.table(projectList);
+		todoFormLogic.startForm();
 	};
 
 	const createProjects = function () {

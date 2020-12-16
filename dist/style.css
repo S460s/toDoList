@@ -39,7 +39,7 @@ body {
 	display: block;
 }
 
-#close {
+.close {
 	color: grey;
 	position: absolute;
 	right: 5px;
@@ -47,8 +47,8 @@ body {
 	font-size: x-large;
 }
 
-#close:hover,
-#close:focus {
+.close:hover,
+.close:focus {
 	color: #3d405b;
 	text-decoration: none;
 	font-weight: 600;
@@ -112,4 +112,25 @@ body {
 
 .invisible {
 	display: none;
+}
+
+/* TODO form*/
+
+#todoPopUp {
+	z-index: 1;
+	border: solid 2px #3d405b;
+	border-radius: 10px;
+
+	width: 80vw;
+	height: 90vh;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+	background-color: #a3b18a;
+	border: red 5px solid;
+
+	display: none;
+	text-align: center;
+	justify-content: center;
+	align-items: top;
 }

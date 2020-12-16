@@ -32,7 +32,13 @@ const projectFlow = (function () {
 		});
 	};
 
-	return { deleteProjectEvent, showTodosEvent, renderProjects };
+	const projectFunctionalities = function (projectList, newProject) {
+		renderProjects(projectList);
+		deleteProjectEvent(projectList, newProject);
+		showTodosEvent(newProject);
+	};
+
+	return { projectFunctionalities };
 })();
 
 export { projectFlow };
