@@ -1,13 +1,7 @@
-import { projectFormLogic } from "./projectForm";
-import { projectFactory } from "./projectFactory";
-
 const projectFlow = (function () {
 	const projectsDiv = document.getElementById("projectList");
-	const projectForm = document.getElementById("projectForm");
-	const titleInput = document.getElementById("titleInput");
-	const projectList = [];
 
-	const renderProjects = function () {
+	const renderProjects = function (projectList) {
 		projectList.forEach((project) => {
 			project.displayProject();
 		});
@@ -19,16 +13,16 @@ const projectFlow = (function () {
 		}
 	};
 
-	const handleDeleteProject = function (project) {
+	const handleDeleteProject = function (projectList, project) {
 		let num = projectList.indexOf(project);
 		projectList.splice(num, 1);
 		clearProjectDiv();
-		renderProjects();
+		renderProjects(projectList);
 	};
 
-	const deleteProjectEvent = function (project) {
+	const deleteProjectEvent = function (projectList, project) {
 		project.deleteBtn.addEventListener("click", () => {
-			handleDeleteProject(project);
+			handleDeleteProject(projectList, project);
 		});
 	};
 
@@ -38,27 +32,7 @@ const projectFlow = (function () {
 		});
 	};
 
-	const handleSubmission = function (e) {
-		e.preventDefault();
-		let newProject = projectFactory(titleInput.value);
-		projectList.push(newProject);
-		titleInput.value = "";
-		renderProjects();
-		deleteProjectEvent(newProject);
-		showTodosEvent(newProject);
-		console.table(projectList);
-	};
-
-	const createProjects = function () {
-		projectForm.addEventListener("submit", handleSubmission);
-	};
-
-	const startFlow = function () {
-		projectFormLogic.startForm();
-		createProjects();
-	};
-
-	return { startFlow };
+	return { deleteProjectEvent, showTodosEvent, renderProjects };
 })();
 
 export { projectFlow };
