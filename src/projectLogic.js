@@ -1,4 +1,3 @@
-import { elementFactory } from "./elementFactory";
 import { projectFormLogic } from "./projectForm";
 import { projectFactory } from "./projectFactory";
 

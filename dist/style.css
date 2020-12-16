@@ -94,7 +94,20 @@ body {
 
 #todoSection {
 	height: 200px;
-	border: 2px red solid;
+	border: 10px orangered solid;
+	position: relative;
+	max-width: 800px;
+	margin: auto;
+}
+
+#newTodo {
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	transform: translate(-50%, 0);
+
+	width: 30vw;
+	max-width: 300px;
 }
 
 .invisible {

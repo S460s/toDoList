@@ -5,23 +5,29 @@ const projectFactory = function (titleText) {
 
 	const projectCard = elementFactory("div", projects, "project");
 	const title = elementFactory("p", projectCard.name, "projectName", "", titleText);
-	const details = elementFactory("p", projectCard.name, "projectDetails", "", "i");
-	const delBtn = elementFactory("p", projectCard.name, "projectDltBtn", "", "x");
-	const todoSection = elementFactory("div", projects, "todoSection", "invisible");
 
-	const deleteBtn = delBtn.name;
+	const details = elementFactory("p", projectCard.name, "projectDetails", "", "i");
 	const detailsBtn = details.name;
+
+	const delelete = elementFactory("p", projectCard.name, "projectDltBtn", "", "x");
+	const deleteBtn = delelete.name;
+
+	const todoSection = elementFactory("div", projects, "todoSection", "invisible");
 	const todoDiv = todoSection.name;
+
+	const addTodo = elementFactory("button", todoDiv, "newTodo", "", "Add new TODO");
+	const addTodoBtn = addTodo.name;
 
 	const displayProject = function () {
 		projectCard.displayElement();
 		title.displayElement();
 		details.displayElement();
-		delBtn.displayElement();
+		delelete.displayElement();
 		todoSection.displayElement();
+		addTodo.displayElement();
 	};
 
-	return { displayProject, deleteBtn, detailsBtn, todoDiv };
+	return { displayProject, deleteBtn, detailsBtn, todoDiv, addTodoBtn };
 };
 
 export { projectFactory };
