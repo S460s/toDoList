@@ -27,9 +27,15 @@ const projectFlow = (function () {
 		renderProjects();
 	};
 
-	const deleteProject = function (project) {
+	const deleteProjectEvent = function (project) {
 		project.deleteBtn.addEventListener("click", () => {
 			handleDeleteProject(project);
+		});
+	};
+
+	const showTodosEvent = function (project) {
+		project.detailsBtn.addEventListener("click", () => {
+			project.todoDiv.classList.toggle("invisible");
 		});
 	};
 
@@ -39,7 +45,8 @@ const projectFlow = (function () {
 		projectList.push(newProject);
 		titleInput.value = "";
 		renderProjects();
-		deleteProject(newProject);
+		deleteProjectEvent(newProject);
+		showTodosEvent(newProject);
 		console.table(projectList);
 	};
 
