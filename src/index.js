@@ -1,15 +1,21 @@
 import { projectFlow } from "./projectLogic";
+
 import { projectFormLogic } from "./projectForm";
 import { projectFactory } from "./projectFactory";
 
 import { todoFormLogic } from "./todoForm";
+import { todoFactory } from "./todoFactory";
 
 const appFlow = (function () {
 	const projectForm = document.getElementById("projectForm");
 	const titleInput = document.getElementById("titleInput");
 	const projectList = [];
 
-	const handleSubmission = function (e) {
+	const createTodo = function (button) {
+		button.addEventListener("submit", handleSubmission);
+	};
+
+	const handleCreateProject = function (e) {
 		e.preventDefault();
 		let newProject = projectFactory(titleInput.value);
 		projectList.push(newProject);
@@ -20,7 +26,7 @@ const appFlow = (function () {
 	};
 
 	const createProjects = function () {
-		projectForm.addEventListener("submit", handleSubmission);
+		projectForm.addEventListener("submit", handleCreateProject);
 	};
 
 	const startApp = function () {

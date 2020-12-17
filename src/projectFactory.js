@@ -18,6 +18,8 @@ const projectFactory = function (titleText) {
 	const addTodo = elementFactory("button", todoDiv, "newTodo", "", "Add new TODO");
 	const addTodoBtn = addTodo.name;
 
+	const todoList = [];
+
 	const displayProject = function () {
 		projectCard.displayElement();
 		title.displayElement();
@@ -27,7 +29,7 @@ const projectFactory = function (titleText) {
 		addTodo.displayElement();
 	};
 
-	return { displayProject, deleteBtn, detailsBtn, todoDiv, addTodoBtn };
+	return { displayProject, deleteBtn, detailsBtn, todoDiv, addTodoBtn, todoList };
 };
 
 export { projectFactory };
