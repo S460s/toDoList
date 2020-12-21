@@ -10,18 +10,15 @@ const todoFormLogic = (function () {
 		});
 	};
 
-	const openProjectForm = function () {
-		const newTodoBtn = document.querySelectorAll("#newTodo");
-		newTodoBtn.forEach((btn) => {
-			btn.addEventListener("click", function () {
-				form.style.cssText = "display: flex";
-			});
+	const openProjectForm = function (btn) {
+		btn.addEventListener("click", function () {
+			form.style.cssText = "display: flex";
 		});
 	};
 
-	const startForm = function () {
+	const startForm = function (btn) {
 		closeProjectForm();
-		openProjectForm();
+		openProjectForm(btn);
 	};
 
 	return { startForm };

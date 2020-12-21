@@ -17,20 +17,20 @@
 				<div id="todoInputs">
 					<form action="" id="todoForm">
 						<label class="todoLabel" for="todoTitleInput">Title</label>
-						<input class="todoInput" id="todoTitleInput" type="text" placeholder="Title">
+						<input class="todoInput" id="todoTitleInput" type="text" placeholder="Title" required>
 
 						<label class="todoLabel" for="todoDescriptionInput">Description</label>
 						<textarea name="description" id="todoDescriptioInput" cols="30" rows="10"></textarea>
 
-						<select name="priority" id="todoPriority">
+						<select name="priority" id="todoPriority" required>
 							<option value="low">Low Priority</option>
 							<option value="medium">Medium Priority</option>
 							<option value="high">High Priority</option>
 						</select>
 						<label class="todoLabel" for="todoDateInput">Due Date</label>
-						<input class="todoInput" type="date" id="todoDateInput">
+						<input class="todoInput" type="date" id="todoDateInput" required>
 
-						<button id="saveTodo">Save</button>
+						<button type="submit" id="saveTodo">Save</button>
 					</form>
 				</div>			
 

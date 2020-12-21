@@ -169,3 +169,8 @@ select {
 	border-radius: 30px;
 	height: 50px;
 }
+/*Single TODOs*/
+
+#todoCard {
+	background-color: aqua;
+}

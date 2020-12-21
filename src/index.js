@@ -9,10 +9,17 @@ import { todoFactory } from "./todoFactory";
 const appFlow = (function () {
 	const projectForm = document.getElementById("projectForm");
 	const titleInput = document.getElementById("titleInput");
+	const todoForm = document.getElementById("todoForm");
+	const todoPopUp = document.getElementById("todoPopUp");
 	const projectList = [];
 
-	const createTodo = function (button) {
-		button.addEventListener("submit", handleSubmission);
+	const createTodo = function () {
+		todoForm.addEventListener("submit", (e) => {
+			e.preventDefault();
+			todoForm.reset();
+			todoPopUp.style.cssText = "display: none";
+			console.log("12");
+		});
 	};
 
 	const handleCreateProject = function (e) {
@@ -22,7 +29,7 @@ const appFlow = (function () {
 		titleInput.value = "";
 		projectFlow.projectFunctionalities(projectList, newProject);
 		console.table(projectList);
-		todoFormLogic.startForm();
+		todoFormLogic.startForm(newProject.addTodoBtn);
 	};
 
 	const createProjects = function () {
@@ -32,6 +39,7 @@ const appFlow = (function () {
 	const startApp = function () {
 		projectFormLogic.startForm();
 		createProjects();
+		createTodo();
 	};
 
 	return { startApp };
