@@ -10,15 +10,15 @@ const todoFormLogic = (function () {
 		});
 	};
 
-	const openProjectForm = function (btn) {
-		btn.addEventListener("click", function () {
+	const openProjectForm = function (project) {
+		project.addTodoBtn.addEventListener("click", function () {
 			form.style.cssText = "display: flex";
 		});
 	};
 
-	const startForm = function (btn) {
+	const startForm = function (project) {
 		closeProjectForm();
-		openProjectForm(btn);
+		openProjectForm(project);
 	};
 
 	return { startForm };

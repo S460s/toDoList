@@ -4,23 +4,12 @@ import { projectFormLogic } from "./projectForm";
 import { projectFactory } from "./projectFactory";
 
 import { todoFormLogic } from "./todoForm";
-import { todoFactory } from "./todoFactory";
+import { todoLogic } from "./todoLogic";
 
 const appFlow = (function () {
 	const projectForm = document.getElementById("projectForm");
 	const titleInput = document.getElementById("titleInput");
-	const todoForm = document.getElementById("todoForm");
-	const todoPopUp = document.getElementById("todoPopUp");
 	const projectList = [];
-
-	const createTodo = function () {
-		todoForm.addEventListener("submit", (e) => {
-			e.preventDefault();
-			todoForm.reset();
-			todoPopUp.style.cssText = "display: none";
-			console.log("12");
-		});
-	};
 
 	const handleCreateProject = function (e) {
 		e.preventDefault();
@@ -29,7 +18,8 @@ const appFlow = (function () {
 		titleInput.value = "";
 		projectFlow.projectFunctionalities(projectList, newProject);
 		console.table(projectList);
-		todoFormLogic.startForm(newProject.addTodoBtn);
+		todoFormLogic.startForm(newProject);
+		todoLogic.createTodo();
 	};
 
 	const createProjects = function () {
@@ -39,7 +29,6 @@ const appFlow = (function () {
 	const startApp = function () {
 		projectFormLogic.startForm();
 		createProjects();
-		createTodo();
 	};
 
 	return { startApp };
