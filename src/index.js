@@ -4,7 +4,6 @@ import { projectFormLogic } from "./projectForm";
 import { projectFactory } from "./projectFactory";
 
 import { todoFormLogic } from "./todoForm";
-import { todoLogic } from "./todoLogic";
 
 const appFlow = (function () {
 	const projectForm = document.getElementById("projectForm");
@@ -19,7 +18,6 @@ const appFlow = (function () {
 		projectFlow.projectFunctionalities(projectList, newProject);
 		console.table(projectList);
 		todoFormLogic.startForm(newProject);
-		todoLogic.createTodo();
 	};
 
 	const createProjects = function () {

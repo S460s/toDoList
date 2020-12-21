@@ -1,4 +1,5 @@
 import { elementFactory } from "./elementFactory";
+import { todoLogic } from "./todoLogic";
 
 const todoFormLogic = (function () {
 	const form = document.getElementById("todoPopUp");
@@ -17,8 +18,10 @@ const todoFormLogic = (function () {
 	};
 
 	const startForm = function (project) {
+		console.log("hello");
 		closeProjectForm();
 		openProjectForm(project);
+		todoLogic.createTodo();
 	};
 
 	return { startForm };
