@@ -1,17 +1,25 @@
+import { todoFactory } from "./todoFactory";
+
 const todoLogic = (function () {
 	const todoPopUp = document.getElementById("todoPopUp");
 	const todoForm = document.getElementById("todoForm");
 
-	const handleCreateTodo = function (e) {
-		console.log(2);
-		e.preventDefault();
-		//	let newTodo = todoFactory();
-		todoForm.reset();
-		todoPopUp.style.cssText = "display: none";
+	const renderTodos = function (todoList) {
+		todoList.forEach((todo) => {
+			todo.displayTodo();
+		});
 	};
 
-	const createTodo = function () {
-		todoForm.addEventListener("submit", handleCreateTodo);
+	const createTodo = function (project) {
+		todoForm.addEventListener("submit", (e) => {
+			console.log("createTodoTest");
+			e.preventDefault();
+			let newTodo = todoFactory(project.todoDiv);
+			project.todoList.push(newTodo);
+			renderTodos(project.todoList);
+			todoForm.reset();
+			todoPopUp.style.cssText = "display: none";
+		});
 	};
 
 	return { createTodo };

@@ -2,7 +2,7 @@ import { elementFactory } from "./elementFactory.js";
 
 const todoFactory = function (container) {
 	const todoCard = elementFactory("div", container, "todoCard");
-	const titleInput = document.getElementById("todoTitleForm");
+	const titleInput = document.getElementById("todoTitleInput");
 	const descriptionInput = document.getElementById("todoDescriptionInput");
 	const priorityInput = document.getElementById("todoPriority");
 	const dateInput = document.getElementById("todoDateInput");

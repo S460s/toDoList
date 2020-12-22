@@ -99,6 +99,8 @@ body {
 	position: relative;
 	max-width: 800px;
 	margin: auto;
+	height: max-content;
+	min-height: 100px;
 }
 
 #newTodo {
@@ -173,4 +175,7 @@ select {
 
 #todoCard {
 	background-color: aqua;
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 30px;
 }
