@@ -1,6 +1,6 @@
 import { todoFactory } from "./todoFactory";
 
-const todoLogic = (function () {
+const todoLogic = function (project) {
 	const todoPopUp = document.getElementById("todoPopUp");
 	const todoForm = document.getElementById("todoForm");
 
@@ -29,23 +29,27 @@ const todoLogic = (function () {
 		});
 	};
 
-	const createTodo = function (project) {
-		const handleCreateTodo = function (e) {
-			console.log("createTodoTest");
-			e.preventDefault();
-			let newTodo = todoFactory(project.todoDiv);
-			project.todoList.push(newTodo);
-			clearTodoDiv(project.todoDiv);
-			renderTodos(project.todoList);
-			todoForm.reset();
-			deleteTodo(project.todoList, newTodo, project.todoDiv);
-			todoPopUp.style.cssText = "display: none";
-			todoForm.removeEventListener("submit", handleCreateTodo);
-		};
+	const handleCreateTodo = function (e) {
+		console.log("createTodoTest");
+		e.preventDefault();
+		let newTodo = todoFactory(project.todoDiv);
+		project.todoList.push(newTodo);
+		clearTodoDiv(project.todoDiv);
+		renderTodos(project.todoList);
+		todoForm.reset();
+		deleteTodo(project.todoList, newTodo, project.todoDiv);
+		todoPopUp.style.cssText = "display: none";
+		todoForm.removeEventListener("submit", handleCreateTodo);
+	};
+	const removeEventListener = function () {
+		todoForm.removeEventListener("submit", handleCreateTodo);
+	};
+
+	const createTodo = function () {
 		todoForm.addEventListener("submit", handleCreateTodo);
 	};
 
-	return { createTodo };
-})();
+	return { createTodo, removeEventListener };
+};
 
 export { todoLogic };

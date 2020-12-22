@@ -7,8 +7,10 @@ const todoFactory = function (container) {
 	const priorityInput = document.getElementById("todoPriority");
 	const dateInput = document.getElementById("todoDateInput");
 	const deleteTodo = elementFactory("p", todoCard.name, "deleteTodo", "", "x");
+	const edit = elementFactory("p", todoCard.name, "editTodo", "", "Edit");
 
 	const deleteBtn = deleteTodo.name;
+	const editBtn = edit.name;
 
 	const title = elementFactory("p", todoCard.name, "todoTitle", "", titleInput.value);
 	const priority = elementFactory(
@@ -26,6 +28,7 @@ const todoFactory = function (container) {
 		title.displayElement();
 		priority.displayElement();
 		date.displayElement();
+		edit.displayElement();
 		deleteTodo.displayElement();
 	};
 
