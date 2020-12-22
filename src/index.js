@@ -8,12 +8,33 @@ import { todoFormLogic } from "./todoForm";
 const appFlow = (function () {
 	const projectForm = document.getElementById("projectForm");
 	const titleInput = document.getElementById("titleInput");
-	const projectList = [];
+
+	const setProjects = function () {
+		let objects = JSON.parse(localStorage.getItem("projectList"));
+		objects.forEach((project) => {
+			projectList.push(project);
+		});
+	};
+
+	const populateStorage = function () {
+		projectList.forEach((i) => {
+			JSON.stringify(i);
+		});
+		localStorage.setItem("projectList", JSON.stringify(projectList));
+	};
+
+	let projectList = [];
+	if (!localStorage.getItem("projectList")) {
+		projectList = [];
+	} else {
+		setProjects();
+	}
 
 	const handleCreateProject = function (e) {
 		e.preventDefault();
 		let newProject = projectFactory(titleInput.value);
 		projectList.push(newProject);
+		populateStorage();
 		titleInput.value = "";
 		projectFlow.projectFunctionalities(projectList, newProject);
 		console.table(projectList);
@@ -25,6 +46,7 @@ const appFlow = (function () {
 	};
 
 	const startApp = function () {
+		console.log(projectList);
 		projectFormLogic.startForm();
 		createProjects();
 	};
