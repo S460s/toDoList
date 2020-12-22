@@ -100,7 +100,7 @@ body {
 	max-width: 800px;
 	margin: auto;
 	height: max-content;
-	min-height: 100px;
+	min-height: 200px;
 }
 
 #newTodo {
