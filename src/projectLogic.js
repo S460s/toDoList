@@ -32,10 +32,15 @@ const projectFlow = (function () {
 		});
 	};
 
+	const showForm = function (project) {
+		let createBtn = project.todoDiv.firstChild;
+	};
+
 	const projectFunctionalities = function (projectList, newProject) {
 		renderProjects(projectList);
 		deleteProjectEvent(projectList, newProject);
 		showTodosEvent(newProject);
+		showForm(newProject);
 	};
 
 	return { projectFunctionalities };
